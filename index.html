@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【無料プレゼント】Claude×楽天アフィリエイト 自動化セットアップガイド | みな｜AI×SNSで在宅収入を叶える主婦</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Shippori+Mincho:wght@500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    screens: {
+                        'xs': '375px',
+                        'sm': '480px',
+                    },
+                    colors: {
+                        brand: {
+                            light: '#FAF0EC',
+                            peach: '#FFF5F0',
+                            coral: '#E89A91',
+                            deep: '#DE7A70',
+                            accent: '#D4AF37',
+                            dark: '#4A3E3D',
+                            line: '#06C755'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                        serif: ['Shippori Mincho', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', 'sans-serif';
+            color: #4A3E3D;
+            background-color: #FAF0EC;
+        }
+        .serif-title {
+            font-family: 'Shippori Mincho', 'serif';
+        }
+        .toast {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
+        }
+        .pulse-btn {
+            animation: heartbeat 2s infinite ease-in-out;
+        }
+        .faq-item > summary {
+            list-style: none;
+            cursor: pointer;
+        }
+        .faq-item > summary::-webkit-details-marker {
+            display: none;
+        }
+        .faq-item > summary .chevron {
+            display: inline-block;
+            transition: transform 0.2s ease;
+        }
+        .faq-item[open] > summary .chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-coral selection:text-white">
+
+    <div id="toast" class="toast fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-brand-deep text-white px-6 py-3 rounded-full shadow-lg font-bold text-sm tracking-wider opacity-0 pointer-events-none transform translate-y-[-10px]">
+        <i class="fa-solid fa-circle-check mr-2"></i>プロンプトをコピーしました！
+    </div>
+
+    <div class="max-w-[640px] mx-auto bg-white min-h-screen shadow-xl flex flex-col overflow-x-hidden">
+
+        <header class="relative text-center bg-gradient-to-b from-brand-peach to-white pt-10 pb-6 px-4 border-b border-brand-light">
+            <div class="inline-block bg-brand-coral text-white text-[10px] xs:text-xs font-bold px-3.5 py-1 rounded-full tracking-wider mb-3 shadow-sm">
+                2026年最新｜商品リサーチ自動化
+            </div>
+
+            <p class="text-xs xs:text-sm font-bold text-brand-deep tracking-tight mb-2">
+                商品探しに費やす時間、もう手放しませんか？
+            </p>
+
+            <h1 class="serif-title text-xl xs:text-2xl sm:text-3xl font-extrabold text-brand-dark leading-snug mb-3 px-1">
+                <span class="text-brand-deep block relative inline-block">
+                    Claude × 楽天アフィ
+                    <span class="absolute left-0 bottom-1 w-full h-2 bg-brand-coral opacity-25 -z-10"></span>
+                </span>
+                <span class="text-brand-deep block relative inline-block">
+                    自動化セットアップガイド
+                </span>
+                <span class="text-sm xs:text-base sm:text-lg block mt-1 text-brand-accent font-bold">＋コピペOKプロンプト集</span>
+            </h1>
+
+            <p class="text-[10px] xs:text-xs font-medium text-gray-400 mb-5">
+                ＼「探す→書く→予約する」を、ひとりで頑張らない仕組み／
+            </p>
+
+            <a href="https://www.instagram.com/mina_ai_fukugyo/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-3 bg-brand-light/50 hover:bg-brand-light transition-colors p-3 rounded-2xl max-w-sm mx-auto mb-4 border border-brand-light group">
+                <img src="assets/profile-mina.jpg"
+                     onerror="this.src='https://i.imgur.com/HWua8hF.png';this.onerror=null;"
+                     alt="みな"
+                     class="w-11 h-11 rounded-full object-cover border-2 border-white shadow group-hover:scale-105 transition-transform">
+                <div class="text-left">
+                    <p class="text-[10px] text-gray-500 font-bold">AI×SNSで在宅収入を叶える主婦</p>
+                    <p class="text-xs xs:text-sm font-extrabold text-brand-dark flex items-center gap-1">
+                        みな
+                        <span class="text-[10px] font-normal text-brand-deep bg-brand-peach px-1.5 py-0.5 rounded">
+                            <i class="fa-brands fa-instagram mr-0.5"></i>@mina_ai_fukugyo
+                        </span>
+                    </p>
+                </div>
+                <i class="fa-solid fa-chevron-right text-gray-300 text-xs ml-auto group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </header>
+
+        <section class="py-8 px-6">
+            <div class="bg-white p-5 xs:p-6 rounded-3xl shadow-sm border border-brand-light">
+                <h3 class="text-sm xs:text-base font-bold text-center text-brand-deep mb-5 flex items-center justify-center gap-1">
+                    🛍️ こんなお悩み、ありませんか？
+                </h3>
+
+                <ul class="space-y-4 text-xs xs:text-sm text-brand-dark leading-relaxed">
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-brand-coral text-base mt-0.5">😖</span>
+                        <span>「楽天アフィリエイトは気になるけど、<br><strong>商品を探すだけで1時間溶けてしまう…</strong>」</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-brand-coral text-base mt-0.5">😖</span>
+                        <span>「紹介文を書こうとしても、いつも同じ言い回しになって手が止まる」</span>
+                    </li>
+                    <li class="flex items-start gap-2.5">
+                        <span class="text-brand-coral text-base mt-0.5">😖</span>
+                        <span>「毎回ゼロから調べ直すのが面倒で、結局続かない」</span>
+                    </li>
+                </ul>
+
+                <div class="mt-6 pt-6 border-t border-dashed border-brand-light text-center">
+                    <p class="text-xs xs:text-sm leading-relaxed font-bold">
+                        その手間、<span class="text-brand-deep font-black bg-brand-peach px-1.5 py-0.5 rounded">Claude</span>に「型」を渡すだけで丸ごと軽くなります✊
+                    </p>
+                    <p class="text-[11px] text-gray-500 mt-2 leading-relaxed">
+                        「商品を探す→紹介文を作る→投稿の準備をする」まで、<br>一連の流れをまとめてお願いできるようになります。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-6 px-6 bg-brand-peach/20">
+            <h3 class="text-xs xs:text-sm font-extrabold text-brand-dark mb-4 flex items-center gap-1.5">
+                <i class="fa-solid fa-route text-brand-coral"></i> 全体の流れ（ざっくり5ステップ）
+            </h3>
+            <div class="space-y-2.5">
+                <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-brand-light/60 text-xs xs:text-sm">
+                    <span class="w-5 h-5 flex items-center justify-center bg-brand-peach text-brand-deep font-bold rounded-full text-[10px] shrink-0">1</span>
+                    <span>楽天アフィリエイトIDを取得する</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-brand-light/60 text-xs xs:text-sm">
+                    <span class="w-5 h-5 flex items-center justify-center bg-brand-peach text-brand-deep font-bold rounded-full text-[10px] shrink-0">2</span>
+                    <span>楽天ウェブサービスでアプリID・アクセスキーを発行する</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-brand-light/60 text-xs xs:text-sm">
+                    <span class="w-5 h-5 flex items-center justify-center bg-brand-peach text-brand-deep font-bold rounded-full text-[10px] shrink-0">3</span>
+                    <span>3つの情報を、安全な方法で控えておく</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-brand-light/60 text-xs xs:text-sm">
+                    <span class="w-5 h-5 flex items-center justify-center bg-brand-peach text-brand-deep font-bold rounded-full text-[10px] shrink-0">4</span>
+                    <span>Claudeに「型」を渡してリサーチ・執筆をお願いする</span>
+                </div>
+                <div class="flex items-center gap-3 bg-white p-3 rounded-xl border border-brand-light/60 text-xs xs:text-sm">
+                    <span class="w-5 h-5 flex items-center justify-center bg-brand-peach text-brand-deep font-bold rounded-full text-[10px] shrink-0">5</span>
+                    <span>内容を確認して、投稿・予約する</span>
+                </div>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-4 text-center leading-relaxed">
+                難しそうに見えて、最初にやることは「IDとキーを3つ控えるだけ」。<br>一度整えてしまえば、次回からはClaudeへのお願いが驚くほどラクになります。
+            </p>
+        </section>
+
+        <section class="py-6 px-6">
+            <div class="flex items-center gap-2.5 mb-5">
+                <span class="bg-brand-coral text-white font-black text-xs px-2.5 py-1 rounded-lg shrink-0">STEP 1</span>
+                <h2 class="text-base font-extrabold text-brand-dark">使うものを確認する</h2>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed mb-4">
+                今回そろえるのは、この3つだけです。
+            </p>
+
+            <div class="space-y-3 mb-5">
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm flex items-start gap-3">
+                    <span class="text-brand-accent text-base">🤖</span>
+                    <div>
+                        <p class="text-xs xs:text-sm font-bold text-brand-dark">Claude</p>
+                        <p class="text-[11px] text-gray-500 mt-0.5">商品リサーチ・紹介文作成・作業の指示出しに使うAI／有料プラン推奨</p>
+                    </div>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm flex items-start gap-3">
+                    <span class="text-brand-accent text-base">🛒</span>
+                    <div>
+                        <p class="text-xs xs:text-sm font-bold text-brand-dark">楽天アフィリエイト</p>
+                        <p class="text-[11px] text-gray-500 mt-0.5">アフィリエイトIDを取得する場所／無料</p>
+                    </div>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm flex items-start gap-3">
+                    <span class="text-brand-accent text-base">🔑</span>
+                    <div>
+                        <p class="text-xs xs:text-sm font-bold text-brand-dark">楽天ウェブサービス</p>
+                        <p class="text-[11px] text-gray-500 mt-0.5">商品情報を取得するためのID・キーを発行する場所／無料</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-brand-peach/30 p-4 rounded-xl border border-brand-light text-xs leading-relaxed">
+                💡 楽天ウェブサービスで発行する「アプリID」と「アクセスキー」は、<br>
+                ClaudeなどのAIやツールが楽天の商品データにアクセスするための"合鍵"のようなものです。<br>
+                この合鍵さえ準備できれば、あとの作業はほぼClaude任せにできます。
+            </div>
+        </section>
+
+        <section class="py-6 px-6 bg-brand-peach/20">
+            <div class="flex items-center gap-2.5 mb-5">
+                <span class="bg-brand-coral text-white font-black text-xs px-2.5 py-1 rounded-lg shrink-0">STEP 2</span>
+                <h2 class="text-base font-extrabold text-brand-dark">楽天アフィリエイトIDを取得する</h2>
+            </div>
+
+            <a href="https://affiliate.rakuten.co.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-brand-deep font-bold text-xs xs:text-sm hover:underline mb-4">
+                <span>🔗</span> 楽天アフィリエイト公式サイト（ここから開く）
+            </a>
+
+            <div class="bg-white p-4 xs:p-5 rounded-2xl border border-brand-light">
+                <ol class="space-y-3 text-xs xs:text-sm text-brand-dark leading-relaxed">
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">①</span><span>上のリンクから公式サイトを開く</span></li>
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">②</span><span>楽天アカウントでログインする</span></li>
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">③</span><span>管理画面からアフィリエイトIDを確認する</span></li>
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">④</span><span>表示されたIDをコピーして、安全な場所に控えておく</span></li>
+                </ol>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-4 leading-relaxed">
+                このIDは、あなた経由で成果が発生したことをシステムが判別するための番号です。<br>
+                あとでClaudeに"名前"だけ伝える形で使うので、メモアプリかパスワード管理ツールに保管しておきましょう。
+            </p>
+        </section>
+
+        <section class="py-6 px-6">
+            <div class="flex items-center gap-2.5 mb-5">
+                <span class="bg-brand-coral text-white font-black text-xs px-2.5 py-1 rounded-lg shrink-0">STEP 3</span>
+                <h2 class="text-base font-extrabold text-brand-dark">楽天ウェブサービスでアプリIDを発行する</h2>
+            </div>
+
+            <a href="https://webservice.rakuten.co.jp/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-brand-deep font-bold text-xs xs:text-sm hover:underline mb-4">
+                <span>🔗</span> 楽天ウェブサービス公式サイト（ここから開く）
+            </a>
+
+            <div class="bg-white p-4 xs:p-5 rounded-2xl border border-brand-light">
+                <ol class="space-y-3 text-xs xs:text-sm text-brand-dark leading-relaxed">
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">①</span><span>上のリンクから公式サイトを開く</span></li>
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">②</span><span>楽天アカウントでログインする</span></li>
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">③</span><span>「アプリID発行」に進み、必要事項を入力する</span></li>
+                    <li class="flex items-start gap-2.5"><span class="text-brand-deep font-bold">④</span><span>発行されたアプリIDをコピーして控える</span></li>
+                </ol>
+            </div>
+            <div class="bg-brand-peach/30 p-4 rounded-xl border border-brand-light mt-4 text-xs leading-relaxed">
+                📝 アプリ名は自分がわかればOK。<br>
+                「Claude商品リサーチ用」「SNS投稿自動化用」など、あとで見返したときに用途が分かる名前にしておくと管理が迷いません。
+            </div>
+
+            <details class="faq-item bg-white rounded-2xl border border-brand-light mt-4">
+                <summary class="p-4 xs:p-5 flex items-center gap-2">
+                    <span class="text-xs xs:text-sm font-extrabold text-brand-deep">😵 「アプリID発行」フォームの早見表</span>
+                    <span class="chevron text-brand-coral text-xs ml-auto">▾</span>
+                </summary>
+
+                <div class="p-4 xs:p-5 pt-0">
+                    <p class="text-[10px] text-gray-400 font-bold mb-2">📋 基本情報</p>
+                    <div class="rounded-xl overflow-hidden border border-brand-light mb-3">
+                        <img src="assets/rakuten-form-basic.png" alt="楽天ウェブサービス アプリID発行フォーム 基本情報の入力例" class="w-full h-auto">
+                    </div>
+                    <p class="text-[10px] text-gray-400 text-center mb-3">↑実際の入力例はこんな感じ(みな調べ)</p>
+                    <div class="space-y-2 mb-4">
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">🏷️</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">アプリケーション名<span class="text-brand-deep font-bold ml-1">→ 好きな名前でOK</span></p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">🔗</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">アプリケーションURL<span class="text-brand-deep font-bold ml-1">→ 投稿するSNSの自分のプロフィールURL</span></p>
+                                <p class="text-[10px] text-gray-400 mt-0.5">例：ThreadsならThreadsの自分のプロフィールURL</p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">🗂️</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">アプリケーションタイプ<span class="text-brand-deep font-bold ml-1">→「Webサービス」に近い方を選ぶ</span></p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">🌐</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">許可されたWebサイト<span class="text-brand-deep font-bold ml-1">→ 上のURLの"ドメイン"だけ入力</span></p>
+                                <p class="text-[10px] text-gray-400 mt-0.5">例：Threadsなら threads.com（枠内の文字は入力例なので消してOK）</p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">📝</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">アプリケーションの説明<span class="text-brand-deep font-bold ml-1">→ 空欄でOK</span></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-[10px] text-gray-400 font-bold mb-2">🎯 利用情報（さらに下にスクロールすると出てきます）</p>
+                    <div class="rounded-xl overflow-hidden border border-brand-light mb-3">
+                        <img src="assets/rakuten-form-usage.png" alt="楽天ウェブサービス アプリID発行フォーム 利用情報とAPIアクセススコープの入力例" class="w-full h-auto">
+                    </div>
+                    <p class="text-[10px] text-gray-400 text-center mb-3">↑この下のAPIアクセススコープも一緒に写ってるよ</p>
+                    <div class="space-y-2 mb-4">
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">🎯</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">データ利用目的<span class="text-red-500 text-[10px] ml-1">必須</span><span class="text-brand-deep font-bold ml-1">→ 一言でOK。空欄不可</span></p>
+                                <p class="text-[10px] text-gray-400 mt-0.5">例：「SNS投稿用の商品リサーチのため」</p>
+                            </div>
+                        </div>
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">📊</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">予想QPS<span class="text-red-500 text-[10px] ml-1">必須</span><span class="text-brand-deep font-bold ml-1">→「1」でOK</span></p>
+                                <p class="text-[10px] text-gray-400 mt-0.5">1秒あたりの想定リクエスト数のこと。手動でたまにリサーチする程度なら1で十分</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-[10px] text-gray-400 font-bold mb-2">🔌 APIアクセススコープ（一番下のチェック欄）</p>
+                    <div class="space-y-2">
+                        <div class="bg-brand-peach/30 p-3 rounded-xl flex items-start gap-2.5">
+                            <span class="text-base shrink-0">🔌</span>
+                            <div>
+                                <p class="text-[11px] font-bold text-brand-dark">APIアクセススコープ<span class="text-red-500 text-[10px] ml-1">必須</span><span class="text-brand-deep font-bold ml-1">→「楽天市場API」だけチェックでOK</span></p>
+                                <p class="text-[10px] text-gray-400 mt-0.5">トラベル・ブックス・Kobo・ゴルフ・レシピは今回不要。旅行や本も紹介したくなったら、その時にチェックを追加すればOK</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-4 border-t border-dashed border-brand-light">
+                        <p class="text-[10px] text-gray-400 leading-relaxed mt-2">
+                            ※タイプの選び方次第で、「許可されたWebサイト」が「許可されたIPアドレス」に変わることがあります。その場合は一旦「Webサイト」系の選択肢に戻すとやりやすいです。
+                        </p>
+                    </div>
+
+                    <p class="text-[11px] text-brand-deep font-bold mt-4 text-center">
+                        💡 あとから管理画面でいつでも編集できます。最初から完璧を目指さなくて大丈夫◎
+                    </p>
+                </div>
+            </details>
+        </section>
+
+        <section class="py-6 px-6 bg-brand-peach/20">
+            <div class="flex items-center gap-2.5 mb-5">
+                <span class="bg-brand-coral text-white font-black text-xs px-2.5 py-1 rounded-lg shrink-0">STEP 4</span>
+                <h2 class="text-base font-extrabold text-brand-dark">3つの情報を安全に管理する</h2>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed mb-4">
+                ここまでで控えた3つの情報は、それぞれ役割が違います。
+            </p>
+
+            <div class="space-y-3 mb-5">
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">楽天アフィリエイトID</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">成果をあなたのアカウントに紐づけるための番号</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">アプリID</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">楽天の商品情報を取得するための識別キー</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">アクセスキー</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">商品情報にアクセスするための"秘密の鍵"。第三者に見せないこと</p>
+                </div>
+            </div>
+
+            <div class="bg-[#FEF9E7] border-l-4 border-yellow-400 p-4 rounded-r-xl text-[10px] xs:text-xs text-brand-dark leading-relaxed">
+                ⚠️ アプリIDやアクセスキーは、スクリーンショットでSNSに載せたり、共有ページに貼ったりしないよう気をつけてください。特にアクセスキーの流出は要注意です。
+            </div>
+        </section>
+
+        <section class="py-6 px-6">
+            <div class="flex items-center gap-2.5 mb-5">
+                <span class="bg-brand-coral text-white font-black text-xs px-2.5 py-1 rounded-lg shrink-0">STEP 5</span>
+                <h2 class="text-base font-extrabold text-brand-dark">Claudeへの安全な伝え方</h2>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed mb-4">
+                取得した3つの情報は、<strong>Claudeのチャット欄にそのまま貼らない</strong>のが鉄則です。<br>
+                特にアクセスキーは、商品データへアクセスするための大切な鍵。AIチャットに直接入力する形で扱うのは避けましょう。
+            </p>
+
+            <div class="bg-brand-peach/30 p-4 rounded-xl border border-brand-light mb-5 text-xs leading-relaxed">
+                💡 <strong>ここが今回いちばん大事なポイントです。</strong><br>
+                Claudeには「値そのもの」ではなく、<span class="font-bold text-brand-deep">値を安全に扱う前提での手順やコード</span>を書いてもらいます。<br>
+                実際の数字や文字列の代わりに、「RAKUTEN_APP_ID」のような"名前"だけを伝えるイメージです。
+            </div>
+
+            <div class="space-y-3 mb-5">
+                <div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <span class="text-brand-coral text-sm mt-0.5">🔒</span>
+                    <p class="text-xs text-brand-dark"><strong>楽天アフィリエイトID</strong>／Claudeには貼らず、パスワード管理ツールや自分専用のメモに保存</p>
+                </div>
+                <div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <span class="text-brand-coral text-sm mt-0.5">🔒</span>
+                    <p class="text-xs text-brand-dark"><strong>アプリID</strong>／Claudeには貼らず、安全なメモに保存してツール側で設定</p>
+                </div>
+                <div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <span class="text-brand-coral text-sm mt-0.5">🔒</span>
+                    <p class="text-xs text-brand-dark"><strong>アクセスキー</strong>／Claudeには貼らず、環境変数や秘密情報管理ツールで保管</p>
+                </div>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed mb-4">
+                実際にClaudeへ最初に伝えるときは、下のプロンプトをそのままコピペでOKです。
+            </p>
+
+            <div class="bg-brand-dark text-white rounded-2xl shadow-md overflow-hidden mb-2">
+                <div class="bg-[#3A302F] px-4 py-3 flex justify-between items-center border-b border-white/10">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-coral"></span>
+                        <span class="text-[11px] text-gray-300 font-bold">初期セットアップ用プロンプト</span>
+                    </div>
+                    <button onclick="copyToClipboard('prompt1', this)" class="text-[10px] text-white bg-brand-coral hover:bg-brand-deep transition-colors px-2.5 py-1 rounded-md font-bold flex items-center gap-1 shrink-0">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>コピー</span>
+                    </button>
+                </div>
+                <div class="p-3 overflow-x-auto">
+                    <pre id="prompt1" class="text-[10px] leading-relaxed font-mono whitespace-pre-wrap select-all">楽天の商品データをもとに、アフィリエイトリンク入りの
+紹介文を作成できる環境を整えたいです。
+
+以下を必ず守って進めてください。
+・楽天アフィリエイトID／アプリID／アクセスキーの中身は、
+　この会話には書き込みません
+・すべて環境変数として扱う前提で作業してください
+・回答／出力／ログのどこにも秘密情報を表示しないでください
+・サンプルコードでは、実際の値の代わりに必ずプレースホルダーを
+　使ってください
+
+これから使う変数名は次のとおりです。
+・RAKUTEN_AFFILIATE_ID
+・RAKUTEN_APP_ID
+・RAKUTEN_ACCESS_KEY
+
+目指すゴール：
+楽天の商品をリサーチし、アフィリエイトリンク付きの
+SNS投稿文を作れるようにすること</pre>
+                </div>
+            </div>
+        </section>
+
+        <div class="px-6 py-4">
+            <div class="w-full rounded-2xl overflow-hidden shadow-sm border border-brand-light bg-brand-peach/10">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=600&h=260"
+                     onerror="this.style.display='none';"
+                     alt="イメージ画像"
+                     class="w-full h-auto object-cover max-h-[180px]">
+            </div>
+        </div>
+
+        <section class="py-6 px-6">
+            <div class="flex items-center gap-2.5 mb-5">
+                <span class="bg-brand-coral text-white font-black text-xs px-2.5 py-1 rounded-lg shrink-0">STEP 6</span>
+                <h2 class="text-base font-extrabold text-brand-dark">Claudeに実際にお願いする</h2>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed mb-4">
+                準備が整ったら、あとはClaudeにやってほしいことをチャットで具体的に伝えるだけです。<br>
+                目的別に2パターン用意したので、状況に合わせて使い分けてください。
+            </p>
+
+            <p class="text-xs xs:text-sm font-bold text-brand-dark mb-2">① 紹介したい商品がすでに決まっている場合</p>
+            <div class="bg-brand-dark text-white rounded-2xl shadow-md overflow-hidden mb-6">
+                <div class="bg-[#3A302F] px-4 py-3 flex justify-between items-center border-b border-white/10">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-coral"></span>
+                        <span class="text-[11px] text-gray-300 font-bold">商品指定リサーチ＋投稿文プロンプト</span>
+                    </div>
+                    <button onclick="copyToClipboard('prompt2', this)" class="text-[10px] text-white bg-brand-coral hover:bg-brand-deep transition-colors px-2.5 py-1 rounded-md font-bold flex items-center gap-1 shrink-0">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>コピー</span>
+                    </button>
+                </div>
+                <div class="p-3 overflow-x-auto">
+                    <pre id="prompt2" class="text-[10px] leading-relaxed font-mono whitespace-pre-wrap select-all">「［商品名］」に関連する商品を楽天で探して、
+紹介しやすそうなものを1つピックアップしてください。
+
+その商品でアフィリエイトリンクを作成したうえで、
+Threads用の投稿文もあわせて作ってください。
+
+■必ず守ること
+・楽天アフィリエイトID／アプリID／アクセスキーの中身は
+　ここに書き込みません
+・認証が必要な処理は、環境変数 RAKUTEN_AFFILIATE_ID /
+　RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY を使う前提で進めてください
+・秘密情報の値は、回答・コード・投稿文のいずれにも
+　一切出力しないでください
+・環境変数が未設定なら、貼り付けを求めるのではなく
+　「先に設定してください」と伝えてください
+
+■投稿のルール
+・投稿予定は明日の20時
+・煽り気味の表現は避け、誠実なトーンでまとめる
+・書き出しの一文で興味を引く
+・使ったことのない商品を「使ってみた」と書かない
+・「#PR」または「広告」の表記を必ず入れる
+・価格は変わる可能性があるため言い切らない
+
+■まとめ方
+【商品名】
+【おすすめポイント】
+【投稿文】
+【アフィリエイトリンク】
+【投稿前の確認事項】</pre>
+                </div>
+            </div>
+
+            <p class="text-xs xs:text-sm font-bold text-brand-dark mb-2">② ジャンルだけ決めて、商品選びごと任せたい場合</p>
+            <div class="bg-brand-dark text-white rounded-2xl shadow-md overflow-hidden mb-6">
+                <div class="bg-[#3A302F] px-4 py-3 flex justify-between items-center border-b border-white/10">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-brand-coral"></span>
+                        <span class="text-[11px] text-gray-300 font-bold">ジャンル一括リサーチプロンプト</span>
+                    </div>
+                    <button onclick="copyToClipboard('prompt3', this)" class="text-[10px] text-white bg-brand-coral hover:bg-brand-deep transition-colors px-2.5 py-1 rounded-md font-bold flex items-center gap-1 shrink-0">
+                        <i class="fa-regular fa-copy"></i>
+                        <span>コピー</span>
+                    </button>
+                </div>
+                <div class="p-3 overflow-x-auto">
+                    <pre id="prompt3" class="text-[10px] leading-relaxed font-mono whitespace-pre-wrap select-all">楽天の「［ジャンル名］」カテゴリの中から、
+SNS向けに紹介しやすい商品を3つ選んでリサーチしてください。
+
+■必ず守ること
+・楽天アフィリエイトID／アプリID／アクセスキーの中身は
+　ここに書き込みません
+・認証が必要な処理は、環境変数 RAKUTEN_AFFILIATE_ID /
+　RAKUTEN_APP_ID / RAKUTEN_ACCESS_KEY を使う前提で進めてください
+・秘密情報は表示しないでください
+
+■選ぶときの基準
+・初心者でも紹介しやすいこと
+・悩み解決型の投稿文に落とし込めること
+・レビュー数や評価を参考にすること
+・アフィリエイトリンクを発行できること
+・投稿文には必ず「#PR」または「広告」を入れること
+
+■商品ごとに教えてほしいこと
+1. 商品名
+2. 選んだ理由
+3. どんな人におすすめか
+4. Threads投稿文
+5. 投稿前に確認すべきこと</pre>
+                </div>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed mb-2">
+                「美容」「家電」「キッチン」「防災」「育児」「ギフト」など、［ジャンル名］を変えるだけでいろいろな切り口に応用できます。
+            </p>
+            <p class="text-xs xs:text-sm leading-relaxed">
+                最初は1商品だけで試してみて、慣れてきたら②のジャンル一括リサーチで数を広げていくのがおすすめです。
+            </p>
+        </section>
+
+        <section class="py-6 px-6 bg-brand-peach/20">
+            <h3 class="text-xs xs:text-sm font-extrabold text-brand-dark mb-3 flex items-center gap-1.5">
+                <i class="fa-solid fa-lightbulb text-brand-accent"></i> なぜClaudeに任せるのがラクなのか
+            </h3>
+            <p class="text-xs leading-relaxed text-brand-dark">
+                商品情報や条件をその都度自分で整理し直すのは、地味に一番しんどい作業です。<br>
+                Claudeに「変数名」と「条件」という"型"を渡しておけば、リサーチ・選定理由・投稿文までを一括りで生成してもらえるので、あなたが手を動かすのは「確認する」ことだけになります。<br>
+                <span class="font-bold text-brand-deep">続けるハードルを下げる仕組み</span>こそが、自動化の一番の価値です。
+            </p>
+        </section>
+
+        <section class="py-6 px-6">
+            <div class="flex items-center gap-2.5 mb-5">
+                <span class="bg-brand-coral text-white font-black text-xs px-2.5 py-1 rounded-lg shrink-0">STEP 7</span>
+                <h2 class="text-base font-extrabold text-brand-dark">投稿予約まで自動化したい場合</h2>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed mb-4">
+                Typefullyのような予約投稿ツールを使っている場合は、Claudeで投稿文を作ったあとにそのまま予約する流れにできます。
+            </p>
+
+            <div class="space-y-3">
+                <div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <span class="bg-brand-coral text-white font-bold w-5 h-5 flex items-center justify-center rounded-full text-[10px] shrink-0 mt-0.5">1</span>
+                    <p class="text-xs xs:text-sm text-brand-dark">Claudeに投稿文を作ってもらう</p>
+                </div>
+                <div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <span class="bg-brand-coral text-white font-bold w-5 h-5 flex items-center justify-center rounded-full text-[10px] shrink-0 mt-0.5">2</span>
+                    <p class="text-xs xs:text-sm text-brand-dark">投稿文・リンク・広告表記を自分の目で確認する</p>
+                </div>
+                <div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <span class="bg-brand-coral text-white font-bold w-5 h-5 flex items-center justify-center rounded-full text-[10px] shrink-0 mt-0.5">3</span>
+                    <p class="text-xs xs:text-sm text-brand-dark">Typefullyを開き、投稿文とリンクを貼り付ける</p>
+                </div>
+                <div class="flex items-start gap-3 bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <span class="bg-brand-coral text-white font-bold w-5 h-5 flex items-center justify-center rounded-full text-[10px] shrink-0 mt-0.5">4</span>
+                    <p class="text-xs xs:text-sm text-brand-dark">投稿日時を設定して、予約を確定する</p>
+                </div>
+            </div>
+
+            <div class="bg-[#FEF9E7] border-l-4 border-yellow-400 p-4 rounded-r-xl text-[10px] xs:text-xs mt-5 text-brand-dark leading-relaxed">
+                ⚠️ どんなに自動化しても、<strong>予約する前の最終チェックだけは自分の目</strong>で。<br>リンク切れ・広告表記の抜け・不自然な表現がないかを確認してから投稿しましょう。
+            </div>
+        </section>
+
+        <section class="py-6 px-6 bg-brand-peach/10">
+            <h3 class="text-xs xs:text-sm font-extrabold text-brand-dark mb-4 flex items-center gap-1.5">
+                <i class="fa-solid fa-shield-heart text-brand-coral"></i> 投稿するときの注意点まとめ
+            </h3>
+            <div class="space-y-2.5">
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">📢 広告表記</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">投稿内に「#PR」「広告」など、広告だと分かる表記を必ず入れる</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">💰 価格の書き方</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">価格は変動するため「執筆時点」「詳細は商品ページへ」と表現する</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">✍️ 体験談の書き方</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">使っていない商品を「使ってみた」と書かない</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">🔐 キーの管理</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">アプリID・アクセスキーはSNSや共有ページに出さない。Claudeにも直接貼らず環境変数で扱う</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">🔗 リンク確認</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">投稿前にアフィリエイトリンクが正しく開くか、自分でクリックして確認する</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-brand-light shadow-sm">
+                    <p class="text-xs font-bold text-brand-dark">📋 規約確認</p>
+                    <p class="text-[11px] text-gray-500 mt-0.5">楽天アフィリエイト・投稿先SNSの最新ルールは定期的にチェックする</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-6 px-6">
+            <h3 class="text-xs xs:text-sm font-extrabold text-brand-dark mb-4 flex items-center gap-1.5">
+                <i class="fa-solid fa-square-check text-brand-coral"></i> 投稿前チェックリスト
+            </h3>
+            <div class="bg-white p-4 xs:p-5 rounded-2xl border border-brand-light space-y-2.5 text-xs xs:text-sm text-brand-dark">
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">楽天アフィリエイトIDを控えた</label>
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">アプリID・アクセスキーを発行し、安全な場所に保存した</label>
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">Claudeには実際の値を貼らず、環境変数で扱う準備をした</label>
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">商品名またはジャンルを決めた</label>
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">投稿文に「#PR」または「広告」を入れた</label>
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">実際に使っていない商品の体験談を書いていない</label>
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">アフィリエイトリンクが正しく開くか確認した</label>
+                <label class="flex items-center gap-2.5"><input type="checkbox" class="w-4 h-4 accent-brand-coral rounded">予約投稿の日時を確認した</label>
+            </div>
+        </section>
+
+        <section class="py-6 px-6 bg-brand-peach/20">
+            <h3 class="text-xs xs:text-sm font-extrabold text-brand-dark mb-4 flex items-center gap-1.5">
+                <i class="fa-solid fa-seedling text-brand-coral"></i> まず試すならこのジャンル
+            </h3>
+            <div class="grid grid-cols-2 gap-2.5">
+                <div class="bg-white p-3 rounded-xl border border-brand-light text-center">
+                    <span class="text-sm">💄</span>
+                    <p class="text-[11px] font-bold mt-1 text-brand-dark">美容家電</p>
+                    <p class="text-[9px] text-gray-500 mt-0.5">悩み解決・比較・ギフト需要</p>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-brand-light text-center">
+                    <span class="text-sm">🍳</span>
+                    <p class="text-[11px] font-bold mt-1 text-brand-dark">キッチン用品</p>
+                    <p class="text-[9px] text-gray-500 mt-0.5">便利グッズとして紹介しやすい</p>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-brand-light text-center">
+                    <span class="text-sm">🧻</span>
+                    <p class="text-[11px] font-bold mt-1 text-brand-dark">日用品</p>
+                    <p class="text-[9px] text-gray-500 mt-0.5">生活改善ネタにしやすい</p>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-brand-light text-center">
+                    <span class="text-sm">🎒</span>
+                    <p class="text-[11px] font-bold mt-1 text-brand-dark">防災グッズ</p>
+                    <p class="text-[9px] text-gray-500 mt-0.5">季節・ニュースに合わせやすい</p>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-brand-light text-center">
+                    <span class="text-sm">🧳</span>
+                    <p class="text-[11px] font-bold mt-1 text-brand-dark">旅行グッズ</p>
+                    <p class="text-[9px] text-gray-500 mt-0.5">連休・長期休み前が狙い目</p>
+                </div>
+                <div class="bg-white p-3 rounded-xl border border-brand-light text-center">
+                    <span class="text-sm">🍼</span>
+                    <p class="text-[11px] font-bold mt-1 text-brand-dark">育児グッズ</p>
+                    <p class="text-[9px] text-gray-500 mt-0.5">悩みが具体的で共感されやすい</p>
+                </div>
+            </div>
+            <p class="text-[11px] text-gray-500 mt-4 text-center leading-relaxed">
+                「今の自分が気になっているもの」や「友達にすすめたいもの」から始めると、投稿文が自然に書けます。
+            </p>
+        </section>
+
+        <section class="py-6 px-6">
+            <h3 class="text-xs xs:text-sm font-extrabold text-brand-dark mb-4 flex items-center gap-1.5">
+                <i class="fa-solid fa-circle-question text-brand-coral"></i> うまくいかないときは
+            </h3>
+            <div class="space-y-2.5">
+                <div class="bg-brand-peach/30 p-3.5 rounded-xl border border-brand-light">
+                    <p class="text-xs font-bold text-brand-deep">Q. 紹介できそうな商品が見つからない</p>
+                    <p class="text-[11px] text-gray-600 mt-1">A. 商品名ではなく、ジャンル名で依頼してみましょう</p>
+                </div>
+                <div class="bg-brand-peach/30 p-3.5 rounded-xl border border-brand-light">
+                    <p class="text-xs font-bold text-brand-deep">Q. 投稿文が売り込みっぽくなる</p>
+                    <p class="text-[11px] text-gray-600 mt-1">A.「自然な口コミ風に。ただし実体験の断定はしない」と指示を追加</p>
+                </div>
+                <div class="bg-brand-peach/30 p-3.5 rounded-xl border border-brand-light">
+                    <p class="text-xs font-bold text-brand-deep">Q. アフィリエイトリンクが正しいか不安</p>
+                    <p class="text-[11px] text-gray-600 mt-1">A. 投稿前に必ず自分でクリックして遷移先を確認する</p>
+                </div>
+                <div class="bg-brand-peach/30 p-3.5 rounded-xl border border-brand-light">
+                    <p class="text-xs font-bold text-brand-deep">Q. 何を紹介すればいいか迷う</p>
+                    <p class="text-[11px] text-gray-600 mt-1">A.「季節需要がある商品を3つ」と依頼してみる</p>
+                </div>
+                <div class="bg-brand-peach/30 p-3.5 rounded-xl border border-brand-light">
+                    <p class="text-xs font-bold text-brand-deep">Q. 文章が長くなりすぎる</p>
+                    <p class="text-[11px] text-gray-600 mt-1">A.「Threads向けに、1投稿で読み切れる長さで」と条件を足す</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 px-6 bg-gradient-to-b from-brand-peach to-white border-t border-brand-light">
+            <h2 class="serif-title text-base xs:text-lg font-bold text-center text-brand-dark mb-8 relative inline-block w-full">
+                最後に、私から大切なお知らせ
+                <span class="block w-12 h-1 bg-brand-coral mx-auto mt-2 rounded-full"></span>
+            </h2>
+
+            <div class="text-xs xs:text-sm leading-relaxed text-brand-dark text-center space-y-4 mb-8">
+                <p>
+                    一度こうした「型」を整えておけば、<br>
+                    商品リサーチも投稿文づくりも<span class="font-extrabold text-brand-deep bg-brand-light/70 px-1 py-0.5 rounded">「毎回ゼロから」ではなくなります</span>。
+                </p>
+                <p>
+                    家事や育児の合間、ちょっとしたスキマ時間にも<br>
+                    コツコツ積み上げていけるのが、この仕組みの一番の魅力です。
+                </p>
+                <p class="font-bold">
+                    「お家の時間を大切にしながら、無理なく育てていきたい」<br>
+                    そんな方にこそ向いているやり方だと思っています🌱
+                </p>
+            </div>
+
+            <div class="bg-[#FCF7F5] border border-brand-coral/30 rounded-2xl p-5 mb-8">
+                <p class="text-xs xs:text-sm leading-relaxed font-bold text-center mb-4">
+                    💡 ひとつだけ<br>
+                    <span class="text-brand-deep border-b-2 border-brand-coral">正直にお伝えしておきたいこと</span>があります。
+                </p>
+                <p class="text-[11px] text-gray-500 mb-4 text-center">
+                    物価は上がり続けているのに、使えるお金はなかなか増えません。<br>
+                    そのうえAIの進化で、これまでの働き方の前提そのものが変わりつつあります。
+                </p>
+
+                <div class="space-y-3 bg-white p-4 rounded-xl border border-brand-light/60">
+                    <p class="text-[10px] font-extrabold text-brand-deep text-center mb-1">
+                        ＼ あなたも、一度はこう思ったことがありませんか？ ／
+                    </p>
+                    <div class="flex items-start gap-2 text-[11px] xs:text-xs">
+                        <span class="text-brand-coral"><i class="fa-solid fa-square-check"></i></span>
+                        <p class="leading-snug">「このままで、子どもにあげたい選択肢を全部あげられるかな…」</p>
+                    </div>
+                    <div class="flex items-start gap-2 text-[11px] xs:text-xs">
+                        <span class="text-brand-coral"><i class="fa-solid fa-square-check"></i></span>
+                        <p class="leading-snug">「値上げのたびにため息。<br>毎月の家計簿と向き合うのがしんどい…」</p>
+                    </div>
+                    <div class="flex items-start gap-2 text-[11px] xs:text-xs">
+                        <span class="text-brand-coral"><i class="fa-solid fa-square-check"></i></span>
+                        <p class="leading-snug">「在宅ワークを調べても情報が多すぎて、何を信じればいいか分からない…」</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed text-center font-bold mb-8">
+                変わりたいと思いながらも、日々の忙しさに追われて<br>
+                <span class="text-red-500">「気づけば1年、何も変わっていなかった」</span>が<br>
+                一番もったいないパターンです。
+            </p>
+
+            <div class="bg-brand-dark text-[#F7F5F5] rounded-3xl p-5 mb-8 shadow-inner relative overflow-hidden">
+                <div class="absolute -right-8 -top-8 w-24 h-24 bg-white/5 rounded-full"></div>
+                <h3 class="text-xs xs:text-sm font-black text-brand-coral tracking-wider text-center mb-3">
+                    💔 実は私も、遠回りだらけでした
+                </h3>
+                <p class="text-[11px] xs:text-xs leading-relaxed mb-3 text-center">
+                    独学のまま副業を始め、<br>
+                    <span class="text-brand-coral font-bold text-xs xs:text-sm underline decoration-brand-coral decoration-2">150万円ものお金を失う</span>失敗を経験しています。
+                </p>
+                <p class="text-[11px] xs:text-xs leading-relaxed text-gray-300 text-center">
+                    「自分には向いていないのかも」と落ち込み、<br>
+                    子どもの何気ない甘えにも笑顔で応えられない日が続いて、<br>
+                    一人で夜中に泣いたこともありました。
+                </p>
+            </div>
+
+            <div class="text-center mb-8">
+                <p class="text-brand-deep text-lg animate-bounce"><i class="fa-solid fa-circle-chevron-down"></i></p>
+            </div>
+
+            <div class="bg-brand-peach p-5 rounded-3xl border border-brand-coral/40 mb-8">
+                <h3 class="text-xs xs:text-sm font-black text-brand-deep text-center mb-3">
+                    ✨ 遠回りの末にたどり着いた「答え」
+                </h3>
+                <p class="text-[11px] xs:text-xs leading-relaxed text-brand-dark mb-4 text-center">
+                    失敗と試行錯誤を重ねてようやく見えてきたのが、<br>
+                    未経験の主婦でも遠回りせずに進める<br>
+                    <strong>「お家で稼ぐ力を育てるロードマップ」</strong>でした。
+                </p>
+                <div class="bg-white p-3 xs:p-4 rounded-xl border border-brand-light text-center space-y-2">
+                    <p class="text-xs font-bold text-brand-dark">私と今のあなたを分けているのは、才能ではありません。</p>
+                    <p class="text-[10px] xs:text-xs sm:text-sm font-black text-brand-deep tracking-tighter whitespace-nowrap">
+                        「正しい順番を知って、<br>一歩を踏み出したかどうか」
+                    </p>
+                    <p class="text-[10px] text-gray-400">本当に、ただそれだけの差でした。</p>
+                </div>
+            </div>
+
+            <p class="text-xs xs:text-sm leading-relaxed text-center font-bold">
+                時間を切り売りする働き方ではなく、<br>
+                <span class="text-brand-deep bg-yellow-100 px-1 py-0.5 rounded">「AIとSNS」を賢く味方につけて</span><br>
+                長く家庭を支えられる収入源を育てていく。<br>
+                それが、自分と家族を守るいちばん現実的な選択だと思っています。
+            </p>
+        </section>
+
+        <section class="py-12 px-6 bg-[#FEF6F3] text-center border-t border-brand-light relative">
+            <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-brand-accent text-white font-extrabold text-[10px] xs:text-xs px-5 py-2 rounded-full shadow-md tracking-wider whitespace-nowrap">
+                👑 無料で今すぐ手に入る 👑
+            </div>
+
+            <div class="mt-4 bg-white p-5 xs:p-6 rounded-3xl shadow-md border border-brand-light">
+                <span class="text-[10px] font-bold text-brand-deep tracking-wider block mb-1">ノウハウを凝縮した限定デジタルブック</span>
+                <h3 class="serif-title text-lg xs:text-xl font-extrabold text-brand-dark leading-snug mb-1">
+                    『AIマネタイズの教科書』
+                </h3>
+                <p class="text-[10px] text-gray-400 mb-5">公式LINEにお友だち登録していただいた方限定で<br>無料プレゼント中🎁</p>
+
+                <div class="w-full rounded-2xl overflow-hidden shadow-sm border border-brand-light bg-brand-peach/10 mb-5">
+                    <img src="assets/book-cover.jpeg"
+                         onerror="this.src='https://i.imgur.com/6RposMA_d.webp?maxwidth=760&fidelity=grand';this.onerror=function(){this.style.display='none';};"
+                         alt="教科書プレゼントイメージ"
+                         class="w-full h-auto object-cover max-h-[160px]">
+                </div>
+
+                <div class="text-left bg-brand-peach/50 p-4 rounded-2xl border border-brand-light space-y-3 mb-5">
+                    <p class="text-xs font-bold text-brand-deep text-center mb-1 pb-2 border-b border-dashed border-brand-light">
+                        📖 教科書の中身を少しだけご紹介！
+                    </p>
+                    <div class="space-y-2.5">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-brand-accent">💎</span>
+                            <p class="text-xs font-bold text-brand-dark"><strong class="text-brand-deep">第一章:</strong> いま一番始めやすいAIマネタイズ手法</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-brand-accent">💎</span>
+                            <p class="text-xs font-bold text-brand-dark"><strong class="text-brand-deep">第二章:</strong> ChatGPT収益化プロンプト</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-brand-accent">💎</span>
+                            <p class="text-xs font-bold text-brand-dark"><strong class="text-brand-deep">第三章:</strong> AIマネタイズ神テンプレート</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-brand-accent">💎</span>
+                            <p class="text-xs font-bold text-brand-dark"><strong class="text-brand-deep">第四章:</strong> マネタイズのための生成AIツール3選</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs text-brand-accent">💎</span>
+                            <p class="text-xs font-bold text-brand-dark"><strong class="text-brand-deep">第五章:</strong> AI×SNSで収益を生むリアル事例</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="text-[11px] text-brand-dark leading-relaxed mb-5">
+                    150万円の失敗を経てようやくたどり着いた、<br>
+                    「主婦が在宅で本当に成果を出せる現実的なロードマップ」をこの一冊に詰め込みました。
+                </p>
+
+                <div class="bg-[#EEF9F1] border border-[#CDEBD3] p-4 rounded-2xl mb-5 text-left">
+                    <span class="bg-[#06C755]/10 text-[#06C755] font-extrabold text-[9px] px-2 py-0.5 rounded-md">特別企画</span>
+                    <h4 class="text-xs font-bold text-brand-dark mt-1">希望者限定『AI収益化サポート会』の実施</h4>
+                    <p class="text-[10px] text-gray-500 mt-1 leading-relaxed">
+                        LINE読者様限定で、お家で安全に進められる特別なサポート会をご案内しています🌱
+                    </p>
+                </div>
+
+                <a href="https://sub.aione.co.jp/line/open/ISEBuerKAyih?mtid=dpdPEBMvLdsV" target="_blank" rel="noopener noreferrer" class="pulse-btn block bg-gradient-to-r from-brand-line via-[#0ddb63] to-brand-line text-white rounded-2xl p-4.5 xs:p-5 shadow-md hover:shadow-lg transition-all group relative overflow-hidden">
+                    <div class="absolute -right-6 -bottom-6 w-16 h-16 bg-white/10 rounded-full"></div>
+                    <div class="flex items-center justify-center gap-2.5">
+                        <i class="fa-brands fa-line text-xl xs:text-2xl"></i>
+                        <span class="font-extrabold tracking-wider text-xs xs:text-sm">【画像をタップ】公式LINEで無料で受け取る</span>
+                    </div>
+                    <p class="text-[9px] mt-1 text-white/95">※配布は期間限定となります。お早めにお受け取りください</p>
+                </a>
+            </div>
+        </section>
+
+        <footer class="bg-brand-dark text-white/70 text-center py-6 px-4 text-[10px] border-t border-white/5 mt-auto">
+            <a href="https://www.instagram.com/mina_ai_fukugyo/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-white hover:text-brand-coral transition-colors mb-3 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+                <i class="fa-brands fa-instagram text-xs"></i>
+                <span class="text-[10px]">Instagram: @mina_ai_fukugyo</span>
+            </a>
+            <p class="mb-1">みな ｜ AI×SNSで在宅収入を叶える主婦</p>
+            <p>&copy; 2026 @mina_ai_fukugyo. All Rights Reserved.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        function copyToClipboard(elementId, button) {
+            const codeElement = document.getElementById(elementId);
+            const textToCopy = codeElement.innerText;
+
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                const toast = document.getElementById('toast');
+                toast.classList.remove('opacity-0', 'pointer-events-none');
+                toast.classList.add('opacity-100');
+                toast.style.transform = 'translate(-50%, 0px)';
+
+                const originalText = button.innerHTML;
+                button.innerHTML = `<i class="fa-solid fa-check"></i> <span>コピー完了</span>`;
+                button.classList.remove('bg-brand-coral');
+                button.classList.add('bg-green-600');
+
+                setTimeout(() => {
+                    toast.classList.add('opacity-0', 'pointer-events-none');
+                    toast.classList.remove('opacity-100');
+                    toast.style.transform = 'translate(-50%, -10px)';
+
+                    button.innerHTML = originalText;
+                    button.classList.remove('bg-green-600');
+                    button.classList.add('bg-brand-coral');
+                }, 2000);
+            }).catch(err => {
+                console.error('コピーに失敗しました: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
